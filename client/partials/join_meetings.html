@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h3>List of Meeting from the REST API
+    <code>/api/join_meetings</code>
+  </h3>
+  <a ng-if="AuthenticationFactory.userRole =='admin'" class="btn" href="#/CreateMeeting">Add Meeting</a>
+</div>
+<!--Ajax spinner-->
+<data-ajax-loading ng-show="loading" class="windows8"></data-ajax-loading>
+<!--End Ajax spinner-->
+<p class="lead">
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Time</th>
+      <th>Join Status</th>
+    </tr>
+    <tr ng-repeat="m in meetings">
+      <td>{{m.title}}</td>
+      <td>{{m.time}}</td>
+      <td>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" ng-click="JoinMeeting(m._id)" class="btn btn-default"><span ng-if="m.users.length > 0" class="glyphicon glyphicon-ok"></span> Yes</button>
+          <button type="button" ng-click="LeaveMeeting(m._id)" class="btn btn-default"><span ng-if="m.users.length <= 0" class="glyphicon glyphicon-ok"></span> No</button>
+        </div>
+        
+        
+    </tr>
+  </table>
+</p>

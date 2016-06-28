@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Edit User using the REST API 
+    <code>/api/EditUser/id</code>
+  </h3>
+</div>
+<!--Ajax spinner-->
+<data-ajax-loading ng-show="loading" class="windows8"></data-ajax-loading>
+<!--End Ajax spinner-->
+<p class="lead">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label for="meeting_title" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-4">
+        <input class="form-control" id="meeting_title"  ng-model="formMeeting.title" >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="meeting_time" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-4">
+        <input ng-model="formMeeting.time" datetime-picker hour="23" minute='59' size="30" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" ng-click="updateMeeting()" class="btn btn-success">Update Meeting</button>
+      </div>
+    </div>
+    <span>{{formMeeting}}</span>
+  </form>
+</p>

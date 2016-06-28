@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>List of Users from the REST API
+    <code>/api/users</code>
+  </h3>
+  <a class="btn" href="#/CreateUser">Add User</a>
+</div>
+<!--Ajax spinner-->
+<data-ajax-loading ng-show="loading" class="windows8"></data-ajax-loading>
+<!--End Ajax spinner-->
+<p class="lead">
+  <table class="table table-striped"  ng-hide="loading">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="p in users">
+      <td>{{p._id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.status}}</td>
+      <td><a ng-href="#/EditUser/{{ p._id }}">Edit</a> | <button class="btn" ng-click="deleteUser(p._id)">Delete</button></td>
+    </tr>
+  </table>
+</p>

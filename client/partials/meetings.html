@@ -1,0 +1,25 @@
+<div class="page-header">
+      <h3>List of Meeting from the REST API
+        <code>/api/meetings</code>
+      </h3>
+      <a class="btn" href="#/CreateMeeting">Add Meeting</a>
+    </div>
+    <!--Ajax spinner-->
+    <data-ajax-loading ng-show="loading" class="windows8"></data-ajax-loading>
+    <!--End Ajax spinner-->
+    <p class="lead">
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+        <tr ng-repeat="m in meetings">
+          <td>{{m._id}}</td>
+          <td>{{m.title}}</td>
+          <td>{{m.time}}</td>
+          <td><a ng-href="#/EditMeeting/{{ m._id }}">Edit</a> | <button class="btn" ng-click="deleteMeeting(m._id)">Delete</button></td>
+        </tr>
+      </table>
+    </p>

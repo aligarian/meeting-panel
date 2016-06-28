@@ -1,0 +1,31 @@
+
+    <div class="page-header">
+    <h3>Creating User using the REST API 
+      <code>/api/user</code>
+    </h3>
+  </div>
+  <!--Ajax spinner-->
+  <data-ajax-loading ng-show="loading" class="windows8"></data-ajax-loading>
+  <!--End Ajax spinner-->
+  <p class="lead">
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="user_name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-4">
+          <input class="form-control" id="user_name"  ng-model="formUser.name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="user_pwd" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-4">
+          <input class="form-control" id="user_pwd"  ng-model="formUser.password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" ng-click="createUser()" class="btn btn-success">Add User</button>
+        </div>
+      </div>
+      <span>{{formInfo}}</span>
+    </form>
+  </p>
